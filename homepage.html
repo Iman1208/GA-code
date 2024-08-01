@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #343a40;
+      color: white;
+      padding: 20px 0;
+      position: fixed;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sidebar img {
+      width: 50px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar .nav-item {
+      width: 100%;
+      padding: 10px 20px;
+    }
+
+    .sidebar .nav-link {
+      color: white;
+      text-align: left;
+      display: block;
+    }
+
+    .sidebar .nav-link.active {
+      background-color: #495057;
+      color: white;
+    }
+
+    .sidebar .dropdown-menu {
+      background-color: #343a40;
+      border: none;
+    }
+
+    .sidebar .dropdown-item {
+      color: white;
+    }
+
+    .sidebar .dropdown-item:hover {
+      background-color: #495057;
+    }
+
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .content h1 {
+      margin: 20px 0;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 30%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-debit {
+      background: linear-gradient(135deg, #23a6d5, #23d5ab);
+      color: #fff;
+    }
+
+    .card-spent {
+      background: linear-gradient(135deg, #f2994a, #f2c94c);
+      color: #fff;
+    }
+
+    .card-balance {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+    }
+
+    .card-content h2 {
+      margin: 0 0 10px;
+      font-size: 1.5em;
+    }
+
+    .card-content p {
+      margin: 0;
+      font-size: 1.2em;
+    }
+
+    .transactions-table {
+      width: 100%;
+      background-color: #003366;
+      color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+
+    .transactions-table th, .transactions-table td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    .transactions-table th {
+      background-color: #004080;
+    }
+
+    .transactions-table td {
+      border-top: 1px solid #004080;
+    }
+
+    .transactions-table .view-recent {
+      text-align: right;
+      padding: 10px;
+    }
+
+    .transactions-table .view-recent a {
+      color: #66b2ff;
+      text-decoration: none;
+    }
+
+    .transactions-table .view-recent a:hover {
+      text-decoration: underline;
+    }
+
+    .language-icon {
+      width: 30px;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+    }
+
+    .savings-chart {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .savings-chart h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+
+    <div class="nav flex-column">
+      <div class="nav-item">
+        <a class="nav-link active" href="homepage.html">Dashboard</a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="wallet.html">My Wallets</a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="profile.html">My Profile</a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="settings.html">Settings</a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="index.html">Logout</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="cards">
+      <div class="card card-debit">
+        <div class="card-content">
+          <h2>Debit Card</h2>
+          <p>1264 5675 3412 2256</p>
+          <p>Iman</p>
+        </div>
+      </div>
+      <div class="card card-spent">
+        <div class="card-content">
+          <h2>Spent</h2>
+          <p>$232.50</p>
+          <p>This week</p>
+        </div>
+      </div>
+      <div class="card card-balance">
+        <div class="card-content">
+          <h2>Balance</h2>
+          <p>$1,256.10</p>
+          <p>Total balance</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Latest Transactions</h2> <p>Public address : DFUBY4708JNV8</p>
+      <table class="transactions-table">
+        <thead>
+          <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Amount Sent</th>
+            <th>Received</th>
+            <th>Percentage Deducted/Received</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Iman</td>
+            <td>James</td>
+            <td>10 SGD</td>
+            <td>10 SGD</td>
+            <td>0%</td>
+          </tr>
+          <tr>
+            <td>Zach</td>
+            <td>Iman</td>
+            <td>10.50 SGD</td>
+            <td>31.50 Rm</td>
+            <td>+300%</td>
+          </tr>
+          <tr>
+            <td>Iman</td>
+            <td>Ed</td>
+            <td>18 Rm</td>
+            <td>6 SGD</td>
+            <td>-300%</td>
+          </tr>
+          <tr>
+            <td colspan="5" class="view-recent">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="savings-chart">
+      <h2>Savings Chart</h2>
+      <canvas id="savingsChart"></canvas>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      var ctx = document.getElementById('savingsChart').getContext('2d');
+      var savingsChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+          datasets: [{
+            label: 'Savings',
+            data: [12, 19, 3, 5, 2, 3, 7],
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            fill: true
+          }, {
+            label: 'Expenses',
+            data: [10, 14, 4, 2, 3, 5, 8],
+            borderColor: 'rgba(255, 99, 132, 1)',
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            fill: true
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

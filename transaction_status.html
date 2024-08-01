@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction Status</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      margin-top: 10px;
+    }
+
+    .back-link {
+      margin-bottom: 20px;
+    }
+
+    .back-link a {
+      color: #66b2ff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="back-link">
+      <a href="send.html">&larr; Back to Payment</a>
+    </div>
+    <div class="card">
+      <h2>Transaction Status</h2>
+      <div id="statusDetails"></div>
+      <button class="btn btn-primary" onclick="window.location.href='homepage.html'">Return to Homepage</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const receiver = urlParams.get('receiver');
+      const amount = urlParams.get('amount');
+      const currency = urlParams.get('currency');
+      const remarks = urlParams.get('remarks');
+
+      const statusDetails = `
+        <p><strong>Receiver's Public Address:</strong> ${receiver}</p>
+        <p><strong>Payment Amount:</strong> ${amount} SGD</p>
+        <p><strong>Converted Currency:</strong> ${currency}</p>
+        <p><strong>Remarks:</strong> ${remarks ? remarks : 'None'}</p>
+        <p><strong>Status:</strong> Payment Successful!</p>
+      `;
+      document.getElementById('statusDetails').innerHTML = statusDetails;
+    });
+  </script>
+
+</body>
+</html>

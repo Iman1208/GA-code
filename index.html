@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anti-scam</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      padding-top: 60px;
+      background-color: #ffffff;
+      text-align: center; 
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar-nav {
+      display: flex;
+      justify-content: flex-start; 
+      width: 100%;
+    }
+
+    .navbar-nav .nav-item {
+      margin-right: 15px; 
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+
+    .footer {
+      position: fixed; 
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .welcome-section, .innovative-platform, .why-us-section, .about-us-section, .help-section, .services-section {
+      padding: 20px;
+      text-align: center; 
+      margin: auto;
+      width: 80%; 
+    }
+
+    .innovative-platform {
+      background-color: #add8e6; 
+      color: #000; 
+      padding: 40px 20px;
+      border-radius: 20px;
+      margin: 20px auto;
+    }
+
+    .btn-register, .btn-help {
+      background-color: #b5651d;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    .btn-register:hover, .btn-help:hover {
+      background-color: #944514;
+    }
+
+    .bold-text {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">Anti-scam</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#welcome-section">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services-section">Our Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about-us-section">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#help-section">Help</a>
+        </li>
+        <li class="nav-item">
+
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Language
+            </button>
+            <div class="dropdown-menu" aria-labelledby="languageDropdown">
+              <a class="dropdown-item" href="#">English</a>
+              <a class="dropdown-item" href="#">Spanish</a>
+              <a class="dropdown-item" href="#">French</a>
+             
+            </div>
+          </div>
+        
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div id="welcome-section" class="container welcome-section mt-5">
+    <h1 class="bold-text">Welcome to Anti-scam</h1>
+    <p>We provide secure, AI-powered financial services to protect you from fraud and phishing.</p>
+  </div>
+
+  <div class="innovative-platform">
+    <div class="container">
+      <p class="bold-text">"Our innovative platform ensures your transactions are safe and seamless"</p>
+      <a href="register.html" class="btn btn-register">Register Now</a>
+    </div>
+  </div>
+
+
+  <div id="services-section" class="container why-us-section">
+    <h1>Our Services</h1>
+    <p>Discover the advanced technologies we use to protect you from scams and ensure seamless financial transactions.</p>
+
+    <h2>Blockchain Technology</h2>
+    <p>Experience unparalleled transparency and security with our blockchain-powered platform. Every transaction you initiate is securely recorded on a decentralized ledger, ensuring transparency and immutability. This means you can track and verify your transactions in real-time with confidence, knowing that your financial data is tamper-proof and protected.</p>
+
+    <h2>AI-Powered Fraud Detection</h2>
+    <p>Protecting your financial assets is our top priority. Our platform integrates advanced AI algorithms for real-time fraud detection. These algorithms continuously analyze transaction patterns and detect any suspicious activities, providing proactive protection against fraud. Rest assured that your funds are safe with our robust security measures.</p>
+
+    <p>At anti-scam, we combine cutting-edge technology with a commitment to customer satisfaction. Join us in shaping the future of digital finance, where security, transparency, and innovation meet to empower your financial journey.</p>
+  </div>
+
+
+  <div id="about-us-section" class="container about-us-section">
+    <h1>About Us</h1>
+    <p>Welcome to anti-scam, where we are revolutionizing the way you manage your finances. Founded on the belief that everyone deserves seamless, secure, and efficient financial solutions, we are committed to empowering individuals and businesses alike with cutting-edge technology.
+
+      At anti-scam, we understand the importance of convenience and security in today's fast-paced world. Our digital wallet platform offers a robust suite of features designed to simplify your financial transactions. Whether you're making payments, sending money to friends and family, or managing your budget, our intuitive interface and state-of-the-art security protocols ensure a hassle-free experience.
+      
+      Driven by innovation and a dedication to customer satisfaction, we continuously strive to enhance our services and expand our offerings to meet the evolving needs of our users. With anti-scam, managing your money is not just easy—it's empowering.
+      
+      Join us on our journey to redefine financial freedom. Discover the future of digital finance with anti-scam.</p>
+  </div>
+
+
+  <div id="help-section" class="container help-section">
+    <h1>Help</h1>
+    <p>Find answers to your questions and get support</p>
+    <a href="help.html" class="btn btn-help">Get Help</a>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

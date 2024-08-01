@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #343a40;
+      color: white;
+      padding: 20px 0;
+      position: fixed;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sidebar img {
+      width: 50px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar .nav-item {
+      width: 100%;
+      padding: 10px 20px;
+    }
+
+    .sidebar .nav-link {
+      color: white;
+      text-align: left;
+      display: block;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    .sidebar .nav-link.active {
+      background-color: #495057;
+    }
+
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile-header {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-header h2 {
+      margin: 0;
+    }
+
+    .profile-actions {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .action-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 30%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .action-card h3 {
+      margin: 0 0 10px;
+    }
+
+    .action-card p {
+      margin: 0;
+      font-size: 1.2em;
+    }
+
+    .settings {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      padding: 20px;
+    }
+
+    .settings h3 {
+      margin-top: 0;
+    }
+
+    .view-transactions {
+      text-align: right;
+      padding: 10px;
+    }
+
+    .view-transactions a {
+      color: #66b2ff;
+      text-decoration: none;
+    }
+
+    .view-transactions a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <div class="nav flex-column">
+      <div class="nav-item">
+        <a class="nav-link" href="homepage.html">Dashboard</a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="wallet.html">My Wallets</a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link active" href="profile.html">My Profile</a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="settings.html">Settings</a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="index.html">Logout</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="profile-header">
+      <h2>Welcome, Iman!</h2>
+    </div>
+
+    <div class="profile-actions">
+      <div class="action-card">
+        <h3><a href="send.html">Send</a></h3>
+        <p>Send money to anyone.</p>
+      </div>
+      <div class="action-card">
+        <h3><a href="pay.html">Pay</a></h3>
+        <p>Pay for services and goods.</p>
+      </div>
+      <div class="action-card">
+        <h3><a href="topup.html">Top Up</a></h3>
+        <p>Add funds to your account.</p>
+      </div>
+    </div>
+
+    <div class="view-transactions">
+      <a href="transaction.html">View All Transactions</a>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Wallet</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #343a40;
+      color: white;
+      padding: 20px 0;
+      position: fixed;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sidebar img {
+      width: 50px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar .nav-item {
+      width: 100%;
+      padding: 10px 20px;
+    }
+
+    .sidebar .nav-link {
+      color: white;
+      text-align: left;
+      display: block;
+    }
+
+    .sidebar .nav-link.active {
+      background-color: #495057;
+    }
+
+    .sidebar .dropdown-menu {
+      background-color: #343a40;
+      border: none;
+    }
+
+    .sidebar .dropdown-item {
+      color: white;
+    }
+
+    .sidebar .dropdown-item:hover {
+      background-color: #495057;
+    }
+
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .card-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card-list li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .card-list li:last-child {
+      border-bottom: none;
+    }
+
+    .btn {
+      margin-top: 10px;
+    }
+
+    .card-actions {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <div class="nav flex-column">
+      <div class="nav-item">
+        <a class="nav-link" href="homepage.html">Dashboard</a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link active" href="wallet.html">My Wallets</a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="profile.html">My Profile</a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="settings.html">Settings</a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="index.html">Logout</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="card">
+      <h2>Manage Your Cards</h2>
+      <ul class="card-list" id="cardList">
+        <li>
+          <strong>Iman</strong><br>
+          Number: 1264 5675 3412 2256<br>
+          Expiry: 22/30<br>
+          CVC: 433
+          <button class="btn btn-danger btn-sm float-right" onclick="deleteCard(this)">Delete</button>
+        </li>
+      </ul>
+      <div class="card-actions">
+        <button class="btn btn-primary" onclick="showAddCardForm()">Add New Card</button>
+      </div>
+    </div>
+
+    <div id="addCardForm" class="card" style="display:none;">
+      <h3>Add New Card</h3>
+      <form onsubmit="addCard(event)">
+        <div class="form-group">
+          <label for="cardName">Card Name</label>
+          <input type="text" class="form-control" id="cardName" required>
+        </div>
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" class="form-control" id="cardNumber" required>
+        </div>
+        <div class="form-group">
+          <label for="cardExpiry">Expiry Date</label>
+          <input type="text" class="form-control" id="cardExpiry" placeholder="MM/YY" required>
+        </div>
+        <div class="form-group">
+          <label for="cardCVC">CVC</label>
+          <input type="text" class="form-control" id="cardCVC" required>
+        </div>
+        <button type="submit" class="btn btn-success">Add Card</button>
+        <button type="button" class="btn btn-secondary" onclick="hideAddCardForm()">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const cardList = document.getElementById('cardList');
+    const addCardForm = document.getElementById('addCardForm');
+
+    function showAddCardForm() {
+      addCardForm.style.display = 'block';
+    }
+
+    function hideAddCardForm() {
+      addCardForm.style.display = 'none';
+    }
+
+    function addCard(event) {
+      event.preventDefault();
+
+      const cardName = document.getElementById('cardName').value;
+      const cardNumber = document.getElementById('cardNumber').value;
+      const cardExpiry = document.getElementById('cardExpiry').value;
+      const cardCVC = document.getElementById('cardCVC').value;
+
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `
+        <strong>${cardName}</strong><br>
+        Number: ${cardNumber}<br>
+        Expiry: ${cardExpiry}<br>
+        CVC: ${cardCVC}
+        <button class="btn btn-danger btn-sm float-right" onclick="deleteCard(this)">Delete</button>
+      `;
+      cardList.appendChild(listItem);
+
+      hideAddCardForm();
+      document.querySelector('form').reset();
+    }
+
+    function deleteCard(button) {
+      const listItem = button.parentElement;
+      cardList.removeChild(listItem);
+    }
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

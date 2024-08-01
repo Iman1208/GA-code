@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seed Phrases</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh; 
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+      margin: 0; 
+    }
+    .grey-bar {
+      background-color: #e9ecef;
+      width: 100%;
+      padding: 10px 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .seed-phrases {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .btn-generate {
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      width: 100%;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    .btn-generate:hover {
+      background-color: #0056b3;
+    }
+    .btn-home {
+      background-color: #6c757d;
+      color: #ffffff;
+      border: none;
+      width: 100%;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px; 
+    }
+    .btn-home:hover {
+      background-color: #5a6268;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grey-bar">
+    <h2>Seed Phrases</h2>
+  </div>
+
+  <div class="seed-phrases">
+    <h3>Your Seed Phrases:</h3>
+    <ul id="seedPhrases">
+    </ul>
+    <button class="btn btn-generate" onclick="generateSeedPhrases()">Generate Seed Phrases</button>
+    <button class="btn btn-home" onclick="returnHome()">Return Home</button>
+  </div>
+
+ 
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+  <script>
+    function generateSeedPhrases() {
+      var wordList = [
+        "apdkj3 kj>,jowh3xye", "banai9uxmu", "chex4riuy*@rry", "daru4rite", "elderb*^&@#*erry",
+        "fig", "gr3h9WD)ape", "honey3#EJbuidew", "imIUJK8)(be", "jac3##kfruit",
+        "kiwIJO(ei", "lemJJDBE^on", "mangHJEWBHWB@o", "nectarjnb*ine", "orange",
+        "papaya", "quince", "raspberry", "strawberry", "tangerine"
+      ];
+
+      var mnemonic = [];
+      for (var i = 0; i < 12; i++) {
+        var randomIndex = Math.floor(Math.random() * wordList.length);
+        mnemonic.push(wordList[randomIndex]);
+      }
+
+      var seedPhrasesElement = document.getElementById("seedPhrases");
+      seedPhrasesElement.innerHTML = "";
+      for (var j = 0; j < mnemonic.length; j++) {
+        var li = document.createElement("li");
+        li.textContent = mnemonic[j];
+        seedPhrasesElement.appendChild(li);
+      }
+
+
+      document.querySelector('.btn-generate').disabled = true;
+    }
+
+    function returnHome() {
+      window.location.href = 'index.html'; 
+    }
+  </script>
+
+</body>
+</html>
